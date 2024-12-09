@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로그인</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+
+</head>
+<body>
+  <!-- 로그인/회원가입 버튼 -->
+  <nav class="user-nav">
+    <ul>
+      <li><a href="#" id="loginBtn">로그인</a></li>
+      <li><a href="#" id="signupBtn">회원가입</a></li>
+    </ul>
+  </nav>
+
+  <!-- 로그인 모달 -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button id="homeBtn" class="home-btn">홈으로</button>
+      <h2>로그인</h2>
+      <form id="authForm">
+        <input type="text" placeholder="ID" required>
+        <input type="password" placeholder="PW" required>
+        <div class="remember-me">
+          <input type="checkbox" id="remember">
+          <label for="remember">아이디 저장</label>
+          <a href="#">아이디/비밀번호 찾기</a>
+        </div>
+        <button type="submit">로그인</button>
+        <button type="button" id="switchToSignup">회원가입</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

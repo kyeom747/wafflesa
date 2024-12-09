@@ -1,0 +1,489 @@
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 15px;
+  width: auto
+}
+
+.user-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.user-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 메인 네비게이션 스타일 */
+.main-nav {
+  background-color: #444;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.slide-sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -260px; /* 기본 닫힌 상태 */
+  transition: left 0.3s ease; /* 부드러운 전환 */
+  z-index: 10;
+}
+
+.slide-sidebar.show {
+  left: 0; /* 열린 상태 */
+}
+
+
+/* 양옆 고정 사이드바 스타일 */
+.fixed-sidebar {
+  width: 220px;
+  padding: 15px;
+  position: fixed;
+  top: 147px;
+  bottom: 51px;
+  overflow-y: auto;
+}
+
+.left-sidebar {
+  left: 0;
+}
+
+.right-sidebar {
+  right: 0;
+}
+
+/* 메인 콘텐츠 스타일 */
+main {
+  flex: 1;
+  margin: 0 220px;
+  padding: 20px;
+  background-color: #e0e0e0;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-list {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.game-item {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* 이미지 스타일 추가 */
+.game-item img {
+  width: 100%;
+  max-width: 150px; /* 이미지 최대 크기 제한 */
+  height: auto; /* 비율 유지 */
+  margin-bottom: 10px; /* 텍스트와 간격 */
+  border-radius: 8px; /* 둥근 모서리 */
+}
+
+
+/* 푸터 스타일 */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; /* 초기 상태 숨김 */
+  opacity: 0; /* 초기 상태 투명 */
+  transition: visibility 0.3s, opacity 0.3s; /* 전환 애니메이션 */
+  z-index: 20;
+}
+
+.modal.show {
+  visibility: visible; /* 표시 */
+  opacity: 1; /* 불투명 */
+}
+
+
+.modal-content {
+  width: 90%; /* 화면의 90% 너비 */
+  max-width: 320px; /* 최대 너비 */
+  max-height: 90%; /* 최대 높이 */
+  overflow-y: auto; /* 세로 스크롤 허용 */
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+.home-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: #0073e6;
+color: #fff;
+border: none;
+border-radius: 4px;
+padding: 5px 10px;
+cursor: pointer;
+}
+
+.home-btn:hover {
+background-color: #005bb5;
+}
+/* 모달 창 스타일 개선 */
+.modal-content {
+width: 320px;
+max-height: 90%;
+overflow-y: auto; /* 스크롤바 생성 */
+padding: 25px;
+background-color: #fff;
+border-radius: 12px;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+text-align: center;
+}
+
+/* 입력 필드 스타일 조정 */
+.modal-content input {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+/* '아이디 저장' 텍스트 정렬 문제 해결 */
+.remember-me {
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: 14px;
+color: #333;
+margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+
+/* 홈 버튼 스타일 */
+.home-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+padding: 5px 10px;
+background-color: #0073e6;
+color: #fff;
+border-radius: 4px;
+cursor: pointer;
+width: 100px;
+}
+
+.home-btn:hover {
+background-color: #005bb5;
+}
+
+/* 게시판 페이지 레이아웃 */
+.board-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr; /* 좌측 사이드바, 메인 콘텐츠, 우측 해시태그 */
+  gap: 20px;
+  padding: 20px;
+}
+/* 게시판 콘텐츠 스타일 */
+.board-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.upload-btn {
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #005bb5;
+}
+
+/* 게시판 테이블 스타일 */
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.board-table th,
+.board-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.board-table th {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.board-table td a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.board-table td a:hover {
+  text-decoration: underline;
+}
+
+/* 모달 창 스타일 개선 */
+.modal-content {
+width: 320px;
+max-height: 90%;
+overflow-y: auto; /* 스크롤바 생성 */
+padding: 25px;
+background-color: #fff;
+border-radius: 12px;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+text-align: center;
+}
+
+/* 입력 필드 스타일 조정 */
+.modal-content input {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+/* '아이디 저장' 텍스트 정렬 문제 해결 */
+.remember-me {
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: 14px;
+color: #333;
+margin-bottom: 15px;
+}
+
+/* 버튼 스타일 개선 */
+button {
+width: 100%;
+padding: 12px;
+margin-top: 10px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #555;
+}
+
+/* 홈 버튼 스타일 */
+.home-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+padding: 5px 10px;
+background-color: #0073e6;
+color: #fff;
+border-radius: 4px;
+cursor: pointer;
+width: 100px;
+}
+
+.home-btn:hover {
+background-color: #005bb5;
+}
+
+/* 게시판 페이지 레이아웃 */
+.board-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr; /* 좌측 사이드바, 메인 콘텐츠, 우측 해시태그 */
+  gap: 20px;
+  padding: 20px;
+}
+/* 게시판 콘텐츠 스타일 */
+.board-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.upload-btn {
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #005bb5;
+}
+
+/* 게시판 테이블 스타일 */
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.board-table th,
+.board-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.board-table th {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.board-table td a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.board-table td a:hover {
+  text-decoration: underline;
+}
+
+header .board-header {
+  position: absolute; /* 절대 위치 설정 */
+  top: 5.5%; /* 헤더의 세로 중앙 */
+  right: 15%; /* 화면의 오른쪽으로 위치 조정 */
+  transform: translateY(-50%); /* 세로 중앙 정렬 */
+  display: flex;
+  justify-content: center; /* 검색 바 정렬 */
+  align-items: center;
+  width: auto; /* 부모 컨테이너 너비 조정 */
+  z-index: 1; /* 다른 요소보다 뒤로 */
+  margin: 0; /* 여백 제거 */
+}
+
+header .search-bar {
+  position: relative; /* 검색 바는 부모 컨테이너(board-header) 안에서 상대적 위치 */
+  width: 300px; /* 고정된 너비 */
+  max-width: 100%; /* 화면 크기에 따라 유연하게 조정 */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0 auto;
+  z-index: 1; /* 다른 요소보다 낮음 */
+}
+
+
+
+
+

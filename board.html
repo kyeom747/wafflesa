@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>board</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+    <a href="cd.html" target="_self"><img src="img/logo2.png" alt="로고" width="280px" height="65px"></a>
+    <div class="board-header">
+      <input type="text" class="search-bar" placeholder="검색">
+    </div>
+    <!-- 로그인/회원가입 버튼 -->
+    <nav class="user-nav">
+      <ul>
+        <li><a href="#" id="loginBtn">로그인</a></li>
+        <li><a href="#" id="signupBtn">회원가입</a></li>
+      </ul>
+    </nav>
+
+    <!-- 로그인/회원가입 모달 -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <button id="homeBtn" class="home-btn">홈으로</button>
+        <h2>로그인</h2>
+        <form id="authForm">
+          <input type="text" placeholder="ID" required>
+          <input type="password" placeholder="PW" required>
+          <div class="remember-me">
+            <input type="checkbox" id="remember">
+            <label for="remember">아이디 저장</label>
+            <a href="#">아이디/비밀번호 찾기</a>
+          </div>
+          <button type="submit">로그인</button>
+          <button type="button" id="switchToSignup">회원가입</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- 삼단바로 열리는 사이드바 메뉴 -->
+  <aside id="sidebar" class="slide-sidebar">
+    <ul>
+      <li><a href="#theme">테마별</a></li>
+      <li><a href="#popular">인기순</a></li>
+      <li><a href="#recommended">추천순</a></li>
+      <li><a href="#custom">자작게임</a></li>
+      <li><a href="#korean">ㄱ ~ ㅎ</a></li>
+      <li><a href="#alphabet">A ~ Z</a></li>
+    </ul>
+  </aside>
+
+  <!-- 메인 네비게이션 메뉴 -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="about.html">와플사 소개글</a></li>
+      <li><a href="board.html">게시판</a></li>
+      <li><a href="notice.html">공지사항</a></li>
+      <li><a href="genre.html">장르</a></li>
+    </ul>
+  </nav>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="board-container">
+    <section class="sidebar">
+    </section>
+
+    <section class="board-content">
+      <div class="board-header">
+        <input type="text" class="search-bar" placeholder="검색">
+        <button class="upload-btn">업로드</button>
+      </div>
+      <table class="board-table">
+        <thead>
+          <tr>
+            <th>글번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+            <th>첨부파일</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>게시글 제목</td>
+            <td>관리자</td>
+            <td>2024-11-20</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>게시글 제목</td>
+            <td>사용자1</td>
+            <td>2024-11-19</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>게시글 제목</td>
+            <td>사용자2</td>
+            <td>2024-11-18</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <td>4</td>
+            <td>게시글 제목</td>
+            <td>사용자3</td>
+            <td>2024-11-17</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <td>5</td>
+            <td>게시글 제목</td>
+            <td>사용자4</td>
+            <td>2024-11-16</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <td>6</td>
+            <td>게시글 제목</td>
+            <td>사용자5</td>
+            <td>2024-11-15</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <td>7</td>
+            <td>게시글 제목</td>
+            <td>사용자6</td>
+            <td>2024-11-14</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <td>8</td>
+            <td>게시글 제목</td>
+            <td>사용자7</td>
+            <td>2024-11-13</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <td>9</td>
+            <td>게시글 제목</td>
+            <td>사용자8</td>
+            <td>2024-11-12</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+          <td>10</td>
+            <td>게시글 제목</td>
+            <td>사용자9</td>
+            <td>2024-11-11</td>
+            <td><a href="#">첨부파일</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+    <!-- 양옆 고정 사이드바 -->
+    <aside class="fixed-sidebar left-sidebar">
+        <ul>
+          <li>공지사항</li>
+        </ul>
+        <ul>
+            <li>게시판</li>
+        </ul>
+      </aside>
+    
+      <aside class="fixed-sidebar right-sidebar">
+        <ul>
+          <li>해시태그</li>
+          <li>해시태그 2</li>
+          <li>해시태그 3</li>
+          <li>이벤트</li>
+        </ul>
+      </aside>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>© 2024 와플사. All rights reserved.</p>
+  </footer>
+</body>
+</html>

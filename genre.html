@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>genre</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+    <a href="cd.html" target="_self"><img src="img/logo2.png" alt="로고" width="280px" height="65px"></a>
+    <div class="board-header">
+      <input type="text" class="search-bar" placeholder="검색">
+    </div>
+    <!-- 로그인/회원가입 버튼 -->
+<nav class="user-nav">
+  <ul>
+    <li><a href="#" id="loginBtn">로그인</a></li>
+    <li><a href="#" id="signupBtn">회원가입</a></li>
+  </ul>
+</nav>
+
+<!-- 로그인/회원가입 모달 -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <button id="homeBtn" class="home-btn">홈으로</button>
+    <h2>로그인</h2>
+    <form id="authForm">
+      <input type="text" placeholder="ID" required>
+      <input type="password" placeholder="PW" required>
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">아이디 저장</label>
+        <a href="#">아이디/비밀번호 찾기</a>
+      </div>
+      <button type="submit">로그인</button>
+      <button type="button" id="switchToSignup">회원가입</button>
+    </form>
+  </div>
+</div>
+
+  </header>
+
+  <!-- 메인 네비게이션 메뉴 -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="about.html">와플사 소개글</a></li>
+      <li><a href="board.html">게시판</a></li>
+      <li><a href="notice.html">공지사항</a></li>
+      <li><a href="genre.html">장르</a></li>
+    </ul>
+  </nav>
+
+  <!-- 삼단바로 열리는 사이드바 메뉴 -->
+  <aside id="sidebar" class="slide-sidebar">
+    <ul>
+      <li><a href="#theme">테마별</a></li>
+      <li><a href="#popular">인기순</a></li>
+      <li><a href="#recommended">추천순</a></li>
+      <li><a href="#custom">자작게임</a></li>
+      <li><a href="#korean">ㄱ ~ ㅎ</a></li>
+      <li><a href="#alphabet">A ~ Z</a></li>
+    </ul>
+  </aside>
+
+  <!-- 양옆 고정 사이드바 -->
+  <aside class="fixed-sidebar left-sidebar">
+    <ul>
+      <li>공지사항</li>
+    </ul>
+    <ul>
+        <li>게시판</li>
+    </ul>
+  </aside>
+
+  <aside class="fixed-sidebar right-sidebar">
+    <ul>
+      <li>해시태그</li>
+      <li>해시태그 2</li>
+      <li>해시태그 3</li>
+      <li>이벤트</li>
+    </ul>
+  </aside>
+
+<!-- 메인 콘텐츠 -->
+<main>
+  <section class="content">
+    <div class="game-list">
+      <div class="game-item">
+        <img src="img/action.png" alt="게임 A 이미지" width="200" height="150">
+        <ul><b>액션</b></ul>
+      </div>
+      <div class="game-item">
+        <img src="img/adventure.png" alt="게임 B 이미지" width="200" height="150">
+        <ul><b>어드벤처</b></ul>
+      </div>
+      <div class="game-item">
+        <img src="img/rpg.png" alt="게임 C 이미지" width="200" height="150">
+        <ul><b>RPG</b></ul>
+      </div>
+    </div>
+    <div class="game-list">
+      <div class="game-item">
+        <img src="img/fighting.png" alt="게임 d 이미지" width="200" height="150">
+        <ul><b>격투</b></ul>
+      </div>
+      <div class="game-item">
+        <img src="img/cooking.png" alt="게임 e 이미지" width="200" height="150">
+        <ul><b>요리</b></ul>
+      </div>
+      <div class="game-item">
+        <img src="img/escape.png" alt="게임 f 이미지" width="200" height="150">
+        <ul><b>탈출</b></ul>
+      </div>
+    </div>
+    <div class="game-list">
+      <div class="game-item">
+        <img src="img/race.png" alt="게임 g 이미지" width="200" height="150">
+        <ul><b>레이스</b></ul>
+      </div>
+      <div class="game-item">
+        <img src="img/sport.png" alt="게임 h 이미지" width="200" height="150">
+        <ul><b>스포츠</b></ul>
+      </div>
+      <div class="game-item">
+        <img src="img/puzzle.png" alt="게임 i 이미지" width="200" height="150">
+        <ul><b>퍼즐</b></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <!-- 푸터 -->
+  <footer>
+    <p>© 2024 와플사. All rights reserved.</p>
+  </footer>
+</body>
+</html>
